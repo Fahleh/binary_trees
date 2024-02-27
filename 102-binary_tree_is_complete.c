@@ -10,17 +10,17 @@
  */
 levelorder_queue_t *_createNode(binary_tree_t *node)
 {
-        levelorder_queue_t *new_node;
+	levelorder_queue_t *new_node;
 
-        new_node = malloc(sizeof(levelorder_queue_t));
+	new_node = malloc(sizeof(levelorder_queue_t));
 
-        if (new_node == NULL)
-                return (NULL);
+	if (new_node == NULL)
+		return (NULL);
 
-        new_node->node = node;
-        new_node->next = NULL;
+	new_node->node = node;
+	new_node->next = NULL;
 
-        return (new_node);
+	return (new_node);
 }
 
 
@@ -31,14 +31,14 @@ levelorder_queue_t *_createNode(binary_tree_t *node)
  */
 void _freeQ(levelorder_queue_t *head)
 {
-        levelorder_queue_t *new_node;
+	levelorder_queue_t *new_node;
 
-        while (head != NULL)
-        {
-                new_node = head->next;
-                free(head);
-                head = new_node;
-        }
+	while (head != NULL)
+	{
+		new_node = head->next;
+		free(head);
+		head = new_node;
+	}
 }
 
 
@@ -53,9 +53,9 @@ void _freeQ(levelorder_queue_t *head)
  * Return: Void.
  */
 void _push_to_queue(binary_tree_t *node, levelorder_queue_t *head,
-                levelorder_queue_t **tail)
+		levelorder_queue_t **tail)
 {
-        levelorder_queue_t *new_node;
+	levelorder_queue_t *new_node;
 
 	new_node = _createNode(node);
 
@@ -79,11 +79,11 @@ void _push_to_queue(binary_tree_t *node, levelorder_queue_t *head,
  */
 void _unshift(levelorder_queue_t **head)
 {
-        levelorder_queue_t *temp;
+	levelorder_queue_t *temp;
 
-        temp = (*head)->next;
-        free(*head);
-        *head = temp;
+	temp = (*head)->next;
+	free(*head);
+	*head = temp;
 }
 
 
@@ -104,7 +104,7 @@ int binary_tree_is_complete(const binary_tree_t *tree)
 		return (0);
 
 	head = tail = _createNode((binary_tree_t *)tree);
-	
+
 	if (head == NULL)
 		exit(1);
 

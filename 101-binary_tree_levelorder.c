@@ -12,7 +12,7 @@ levelorder_queue_t *_createNode(binary_tree_t *node)
 	levelorder_queue_t *new_node;
 
 	new_node = malloc(sizeof(levelorder_queue_t));
-	
+
 	if (new_node == NULL)
 		return (NULL);
 
