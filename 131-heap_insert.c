@@ -10,10 +10,10 @@
  */
 size_t _getSize(const binary_tree_t *tree)
 {
-        if (!tree)
-                return (0);
+	if (!tree)
+		return (0);
 
-        return (_getSize(tree->left) + _getSize(tree->right) + 1);
+	return (_getSize(tree->left) + _getSize(tree->right) + 1);
 }
 
 
